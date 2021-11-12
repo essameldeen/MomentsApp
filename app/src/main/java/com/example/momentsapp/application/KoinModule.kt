@@ -23,7 +23,7 @@ val koinModule = module {
 
     single { MomentRepositoryImplementation(get(), get()) as MomentRepository }
 
-    single { CreateMoment(get()) }
+    single { CreateMoment(get(), get()) }
 
     single { GetMoments(get()) }
 
