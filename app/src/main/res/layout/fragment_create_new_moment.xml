@@ -57,7 +57,7 @@
             app:layout_constraintTop_toBottomOf="@+id/photo" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/title"
+            android:id="@+id/title_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -70,13 +70,14 @@
             app:layout_constraintTop_toBottomOf="@+id/capture">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/description"
+            android:id="@+id/description_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -86,9 +87,10 @@
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title">
+            app:layout_constraintTop_toBottomOf="@+id/title_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine" />
@@ -96,7 +98,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/country"
+            android:id="@+id/country_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -106,16 +108,17 @@
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description">
+            app:layout_constraintTop_toBottomOf="@+id/description_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/city"
+            android:id="@+id/city_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -125,9 +128,10 @@
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/country">
+            app:layout_constraintTop_toBottomOf="@+id/country_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -144,7 +148,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/city" />
+            app:layout_constraintTop_toBottomOf="@+id/city_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

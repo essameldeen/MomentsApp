@@ -81,7 +81,7 @@ class CreateNewMomentFragment : Fragment()
         }
     }
 
-    private fun createNewMoment() = viewModel.createMoment(viewBinding.title.toString(), viewBinding.description.toString(), viewBinding.country.toString(), viewBinding.city.toString())
+    private fun createNewMoment() = viewModel.createMoment(viewBinding.title.text.toString(), viewBinding.description.text.toString(), viewBinding.country.text.toString(), viewBinding.city.text.toString())
 
     @NeedsPermission(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
     fun openCamera() = cameraLauncher.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
