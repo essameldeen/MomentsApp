@@ -6,11 +6,13 @@ import com.example.momentsapp.domain.repository.MomentRepository
 class MomentRepositoryImplementation constructor(): MomentRepository
 {
     private var moments = mutableListOf<Moment>()
-
     override fun getCachedMoments(): MutableList<Moment> = moments
+    override fun getMoments(): MutableList<Moment> {
+            // call fireBase
 
-    override fun createMoment()
-    {
-        TODO("Not yet implemented")
+         // set cached
+        return  moments
     }
+
+    override fun createMoment() {}
 }
