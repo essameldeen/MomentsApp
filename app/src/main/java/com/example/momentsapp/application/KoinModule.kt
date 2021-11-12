@@ -5,20 +5,29 @@ import com.example.momentsapp.data.firebase.FirestoreManager
 import com.example.momentsapp.data.repository.*
 import com.example.momentsapp.domain.repository.*
 import com.example.momentsapp.domain.usecase.*
+import com.example.momentsapp.presentation.home.viewModel.HomeViewModel
 import com.example.momentsapp.presentation.new_moment.CreateNewMomentViewModel
+import com.google.firebase.database.FirebaseDatabase
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val koinModule = module {
+
+    single { FirebaseDatabase.getInstance() }
+
     single { FirestoreManager() }
 
     single { FirebaseStorageManager() }
 
     single { FileRepositoryImplementation(get()) as FileRepository }
 
-    single { MomentRepositoryImplementation(get()) as MomentRepository }
+    single { MomentRepositoryImplementation(get(), get()) as MomentRepository }
 
     single { CreateMoment(get(), get()) }
 
+    single { GetMoments(get()) }
+
     viewModel { CreateNewMomentViewModel(get()) }
+
+    viewModel { HomeViewModel(get()) }
 }
