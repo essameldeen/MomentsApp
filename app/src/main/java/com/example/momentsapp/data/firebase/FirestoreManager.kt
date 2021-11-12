@@ -43,13 +43,13 @@ class FirestoreManager
                         if (data != null)
                         {
                             val id = data["id"].toString()
-                            val name = data["name"].toString()
+                            val title = data["title"].toString()
                             val description = data["description"].toString()
                             val photo = data["photo"].toString()
                             val country = data["country"].toString()
                             val city = data["city"].toString()
                             val likes = data["likes"].toString().toLong()
-                            moments.add(Moment(id, name, description, photo, country, city, likes))
+                            moments.add(Moment(id, title, description, photo, country, city, likes))
                         }
                     }
                     listener(moments)
