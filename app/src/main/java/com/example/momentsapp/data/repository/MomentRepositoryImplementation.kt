@@ -6,8 +6,5 @@ import com.example.momentsapp.domain.repository.MomentRepository
 
 class MomentRepositoryImplementation constructor(private val database: FirestoreManager): MomentRepository
 {
-    override fun createMoment(moment: Moment, listener: (Boolean) -> Unit)
-    {
-
-    }
+    override fun createMoment(moment: Moment, listener: (Boolean) -> Unit) = database.addMoment(moment, listener)
 }

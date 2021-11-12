@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">MomentsApp</string>
     <string name="error">Something went wrong! … Please try again later.</string>
+    <string name="successful_moment">Your moment is now live ^_^</string>
+    <string name="create_new_moment">Add Your Moment</string>
+    <string name="capture">Capture Your Moment</string>
+    <string name="share">Share Your Moment</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
 </resources>
