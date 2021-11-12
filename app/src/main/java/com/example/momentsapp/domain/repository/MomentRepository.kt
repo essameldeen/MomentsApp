@@ -7,5 +7,5 @@ interface MomentRepository
     fun createMoment(moment: Moment, listener: (Boolean) -> Unit)
     fun getCachedMoments(): MutableList<Moment>
     fun getMoments(): MutableList<Moment>
-    fun createMoment()
+
 }

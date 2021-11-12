@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MomentsApp</string>
     <string name="error">Something went wrong! … Please try again later.</string>
+    <string name="moment_title">Title</string>
+    <string name="moment_description">Description</string>
+    <string name="moment_country">Egypt</string>
+    <string name="moment_city">cairo</string>
 </resources>
