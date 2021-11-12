@@ -14,7 +14,12 @@ import com.example.momentsapp.databinding.MomentItemBinding
 
 class MomentsAdapter : RecyclerView.Adapter<MomentsAdapter.MomentViewHolder>() {
     inner class MomentViewHolder(itemView: MomentItemBinding) :
-        RecyclerView.ViewHolder(itemView.root)
+        RecyclerView.ViewHolder(itemView.root) {
+        val image = itemView.momentImage
+        val title = itemView.titleTv
+        val description = itemView.descriptionTv
+
+    }
 
 
     private val differCallBack = object : DiffUtil.ItemCallback<Moment>() {
@@ -40,9 +45,12 @@ class MomentsAdapter : RecyclerView.Adapter<MomentsAdapter.MomentViewHolder>() {
 
     override fun onBindViewHolder(holder: MomentViewHolder, position: Int) {
         val moment = differ.currentList[position]
+
         holder.itemView.apply {
-           // Glide.with(this).load(moment.photo).into()
+            Glide.with(this).load(moment.photo).into(holder.image)
+
         }
+
 
     }
 

@@ -35,9 +35,10 @@ class HomeViewModel constructor(private val getMoments: GetMoments) : ViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             showProgressBar()
             try {
-                val result = getMoments.run()
+                getMoments.run {
+                    _moments.postValue(it)
+                }
 
-                _moments.postValue(result)
             } catch (error: Throwable) {
                 _errorMessage.postValue(error)
             } finally {

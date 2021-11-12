@@ -4,11 +4,11 @@ import com.example.momentsapp.data.model.Moment
 import com.example.momentsapp.domain.repository.MomentRepository
 
 class GetMoments constructor(private val repository: MomentRepository) {
-    fun run(): MutableList<Moment> {
+    fun run(listener: (MutableList<Moment>) -> Unit) {
         val cached = repository.getCachedMoments()
         if (cached.isEmpty()) {
-            return repository.getMoments()
+            repository.getMoments(listener)
         }
-        return cached
+        listener(cached)
     }
 }
