@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph">
 
-
+    <fragment
+        android:id="@+id/create_new_moment"
+        android:name="com.example.momentsapp.presentation.new_moment.CreateNewMomentFragment"
+        tools:layout="@layout/fragment_create_new_moment"
+        android:label="Create New Moment Fragment"/>
 
 </navigation>
