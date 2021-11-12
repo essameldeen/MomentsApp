@@ -4,8 +4,5 @@ import com.example.momentsapp.data.model.Moment
 
 interface MomentRepository
 {
-    fun getCachedMoments(): MutableList<Moment>
-
-    fun createMoment()
-
+    fun createMoment(moment: Moment, listener: (Boolean) -> Unit)
 }
