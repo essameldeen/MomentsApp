@@ -9,11 +9,9 @@ class FirebaseStorageManager
 
     fun upload(moment: String, file: Uri, listener: (String) -> Unit, onError: (Throwable) -> Unit)
     {
-        // Create a storage reference from our app
         val storageRef = storage.reference
         val reference = storageRef.child("moments/$moment.png")
         val uploadTask = reference.putFile(file)
-
         uploadTask.addOnSuccessListener {
             reference.downloadUrl.addOnSuccessListener { uri ->
                 listener(uri.toString())
