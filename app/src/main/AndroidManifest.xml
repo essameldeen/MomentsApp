@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MomentsApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.base.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
