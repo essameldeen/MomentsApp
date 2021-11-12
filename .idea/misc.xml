@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/ic_back.xml" value="0.15462962962962962" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/ic_capture.xml" value="0.15462962962962962" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/ic_like.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/splash_drawable.xml" value="0.1" />
         <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/fragment_home.xml" value="0.12409420289855072" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/dialog_loading.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/fragment_create_new_moment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/moment_item.xml" value="0.33" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/menu/bottom_navigation_meun.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/menu/menu.xml" value="0.1361111111111111" />
       </map>
     </option>
   </component>
