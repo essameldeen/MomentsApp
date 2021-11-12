@@ -72,7 +72,8 @@ class CreateNewMomentFragment : Fragment()
                 Toast.makeText(requireActivity(), getString(R.string.successful_moment), Toast.LENGTH_SHORT).show()
                 findNavController().popBackStack()
             }
-            is CreateNewMomentViewState.ErrorCreationState -> {
+            is CreateNewMomentViewState.ErrorCreationState ->
+            {
                 Loading.dismiss()
                 Toast.makeText(requireActivity(), state.error.message ?: getString(R.string.error), Toast.LENGTH_SHORT).show()
             }
@@ -80,12 +81,7 @@ class CreateNewMomentFragment : Fragment()
         }
     }
 
-    private fun createNewMoment()
-    {
-        if (inputsAreValid()) viewModel.createMoment(viewBinding.title.toString(), viewBinding.description.toString(), viewBinding.country.toString(), viewBinding.city.toString())
-    }
-
-    private fun inputsAreValid(): Boolean = viewBinding.title.toString().isNotEmpty() && viewBinding.description.toString().isNotEmpty() && viewBinding.country.toString().isNotEmpty() && viewBinding.city.toString().isNotEmpty()
+    private fun createNewMoment() = viewModel.createMoment(viewBinding.title.toString(), viewBinding.description.toString(), viewBinding.country.toString(), viewBinding.city.toString())
 
     @NeedsPermission(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
     fun openCamera() = cameraLauncher.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
