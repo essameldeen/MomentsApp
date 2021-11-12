@@ -1,11 +1,11 @@
 package com.example.momentsapp.data.model
 
 data class Moment(
-    val id: Int?,
-    val title: String?,
-    val description: String?,
-    val image: String?,
-    val country: String?,
-    val city: String?,
-    var like: Boolean? = false
+    var id: String = "",
+    var title: String = "",
+    var description: String = "",
+    var photo: String = "",
+    var country: String = "",
+    var city: String = "",
+    var likes: Long = 0,
 )

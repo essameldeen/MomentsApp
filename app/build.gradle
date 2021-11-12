@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
-    id 'com.google.gms.google-services'
 }
 
 android {
@@ -60,6 +59,9 @@ dependencies {
     kapt 'com.github.permissions-dispatcher:permissionsdispatcher-processor:4.8.0'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.google.firebase:firebase-core:20.0.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.0.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
 
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
