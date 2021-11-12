@@ -18,6 +18,10 @@ class MomentsAdapter : RecyclerView.Adapter<MomentsAdapter.MomentViewHolder>() {
         val image = itemView.momentImage
         val title = itemView.titleTv
         val description = itemView.descriptionTv
+        val country = itemView.countryTv
+        val city = itemView.cityTv
+        val likes = itemView.likeTv
+        val love = itemView.loveIc
 
     }
 
@@ -48,7 +52,11 @@ class MomentsAdapter : RecyclerView.Adapter<MomentsAdapter.MomentViewHolder>() {
 
         holder.itemView.apply {
             Glide.with(this).load(moment.photo).into(holder.image)
-
+            holder.title.text = moment.title
+            holder.description.text = moment.description
+            holder.city.text = moment.city
+            holder.country.text = moment.country
+            holder.likes.text = moment.likes.toString()
         }
 
 
