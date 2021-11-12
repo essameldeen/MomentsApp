@@ -16,7 +16,7 @@ class CreateNewMomentViewModel constructor(private val createMoment: CreateMomen
 
     fun createMoment(title: String, description: String, country: String, city: String) = CoroutineScope(Dispatchers.IO).launch {
         state.postValue(CreateNewMomentViewState.LoadingCreationState)
-        createMoment.run(title, description, Uri.parse("file://$photoPath"), country, city, {
+        createMoment.run(title, description, photoPath, country, city, {
             state.postValue(CreateNewMomentViewState.SuccessfulCreationState)
         }, {
             state.postValue(CreateNewMomentViewState.ErrorCreationState(it))
