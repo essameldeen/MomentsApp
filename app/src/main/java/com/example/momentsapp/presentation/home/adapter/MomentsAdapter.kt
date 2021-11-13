@@ -2,12 +2,10 @@ package com.example.momentsapp.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.NonNull
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.momentsapp.R
 import com.example.momentsapp.data.model.Moment
 import com.example.momentsapp.databinding.MomentItemBinding
 
@@ -18,10 +16,8 @@ class MomentsAdapter : RecyclerView.Adapter<MomentsAdapter.MomentViewHolder>() {
         val image = itemView.momentImage
         val title = itemView.titleTv
         val description = itemView.descriptionTv
-        val country = itemView.countryTv
-        val city = itemView.cityTv
-        val likes = itemView.likeTv
-        val love = itemView.loveIc
+        val place = itemView.countryCityTv
+        val like = itemView.loveIc
 
     }
 
@@ -54,12 +50,10 @@ class MomentsAdapter : RecyclerView.Adapter<MomentsAdapter.MomentViewHolder>() {
             Glide.with(this).load(moment.photo).into(holder.image)
             holder.title.text = moment.title
             holder.description.text = moment.description
-            holder.city.text = moment.city
-            holder.country.text = moment.country
-            holder.likes.text = moment.likes.toString()
+            val place = "${moment.country}, ${moment.city}"
+            holder.place.text = place
+            holder.like.text = moment.likes.toString()
         }
-
-
     }
 
     override fun getItemCount(): Int {
