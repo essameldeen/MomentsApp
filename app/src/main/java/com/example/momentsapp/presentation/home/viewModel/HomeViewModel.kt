@@ -6,10 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.momentsapp.data.model.Moment
 import com.example.momentsapp.domain.usecase.GetMoments
+import com.example.momentsapp.domain.usecase.LikeMoment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomeViewModel constructor(private val getMoments: GetMoments) : ViewModel() {
+class HomeViewModel constructor(
+    private val getMoments: GetMoments,
+    private val likeMoment: LikeMoment
+) : ViewModel() {
 
     private val _errorMessage = MutableLiveData<Throwable>()
     val errorMessage: LiveData<Throwable>
@@ -22,6 +26,7 @@ class HomeViewModel constructor(private val getMoments: GetMoments) : ViewModel(
     private val _moments = MutableLiveData<MutableList<Moment>>()
     val moment: LiveData<MutableList<Moment>>
         get() = _moments
+
 
     private fun showProgressBar() {
         _progressBar.postValue(true)
@@ -45,6 +50,17 @@ class HomeViewModel constructor(private val getMoments: GetMoments) : ViewModel(
                 hideProgressBar()
             }
 
+        }
+    }
+
+    fun likeMoment(momentId: String) = viewModelScope.launch(Dispatchers.IO) {
+        showProgressBar()
+        try {
+            likeMoment.run(momentId) {}
+        } catch (e: Throwable) {
+            _errorMessage.postValue(e)
+        }finally {
+            hideProgressBar()
         }
     }
 }

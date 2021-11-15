@@ -17,22 +17,23 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class HomeFragment : Fragment() {
     lateinit var momentsAdapter: MomentsAdapter
     lateinit var binding: FragmentHomeBinding
+    val viewModel: HomeViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val viewModel: HomeViewModel by viewModel()
+
         initAdapter()
         viewModel.getMoments()
-        viewModel.moment.observe(this, {
+        viewModel.moment.observe(viewLifecycleOwner, {
             updateUI(it)
         })
-        viewModel.progressBar.observe(this, {
+        viewModel.progressBar.observe(viewLifecycleOwner, {
             progressShowOrHidden(it)
         })
-        viewModel.errorMessage.observe(this, {
+        viewModel.errorMessage.observe(viewLifecycleOwner, {
             showErrorMessage(it)
         })
 
@@ -44,6 +45,9 @@ class HomeFragment : Fragment() {
         binding.momentsRv.apply {
             adapter = momentsAdapter
             layoutManager = LinearLayoutManager(activity)
+        }
+        momentsAdapter.setOnItemClickListener {
+            viewModel.likeMoment(it.id)
         }
     }
 

@@ -23,8 +23,9 @@ val koinModule = module {
     single { GetMoments(get()) }
 
     single { CreateMoment(get(), get()) }
+    single { LikeMoment(get()) }
 
-    viewModel { HomeViewModel(get()) }
+    viewModel { HomeViewModel(get(),get()) }
 
     viewModel { CreateNewMomentViewModel(get()) }
 }
