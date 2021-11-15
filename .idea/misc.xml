@@ -3,11 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16388044579533942" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/ic_back.xml" value="0.15462962962962962" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/ic_capture.xml" value="0.15462962962962962" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/ic_like.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/drawable/splash_drawable.xml" value="0.1" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/dialog_loading.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/fragment_create_new_moment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/layout/moment_item.xml" value="0.33" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/menu/bottom_navigation_meun.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/said2542021/MomentsApp/app/src/main/res/menu/menu.xml" value="0.1361111111111111" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
