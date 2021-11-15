@@ -9,4 +9,6 @@ interface MomentRepository
     fun createMoment(moment: Moment, listener: (Boolean) -> Unit)
 
     fun getMoments(listener: (MutableList<Moment>) -> Unit)
+
+    fun incrementMomentLikes(moment: String, listener: (Boolean) -> Unit)
 }

@@ -18,6 +18,12 @@ class MomentsAdapter : RecyclerView.Adapter<MomentsAdapter.MomentViewHolder>() {
         val description = itemView.descriptionTv
         val place = itemView.countryCityTv
         val like = itemView.loveIc
+        init
+        {
+            like.setOnClickListener{
+                onItemClickListener?.let { listener -> listener(differ.currentList[layoutPosition]) }
+            }
+        }
 
     }
 

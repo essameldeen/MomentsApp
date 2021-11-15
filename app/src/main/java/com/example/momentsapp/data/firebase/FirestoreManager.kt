@@ -1,13 +1,14 @@
 package com.example.momentsapp.data.firebase
 
 import com.example.momentsapp.data.model.Moment
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FirestoreManager
 {
+    val db = FirebaseFirestore.getInstance()
     fun addMoment(moment: Moment, listener: (Boolean) -> Unit)
     {
-        val db = FirebaseFirestore.getInstance()
         db.collection("moments").document(moment.id).set(
             mapOf(
                 "id" to moment.id,
@@ -28,7 +29,7 @@ class FirestoreManager
 
     fun listenToMoments(listener: (MutableList<Moment>) -> Unit)
     {
-        val db = FirebaseFirestore.getInstance()
+
         try
         {
             val reference = db.collection("moments")
@@ -59,6 +60,14 @@ class FirestoreManager
         catch (ex: Exception)
         {
             ex.printStackTrace()
+        }
+    }
+    fun incrementMomentLikes(moment: String, listener: (Boolean) -> Unit){
+        db.collection("moments").document(moment).update("likes", FieldValue.increment(1)).addOnSuccessListener {
+            listener(true)
+        }.addOnFailureListener {
+            it.printStackTrace()
+            listener(false)
         }
     }
 }
